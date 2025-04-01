@@ -1,0 +1,22 @@
+.petti-register {
+    .ant-row {
+        flex-direction: row!important;
+        align-items: flex-end;
+        input {
+            width: 100%;
+        }
+    }
+    .ant-form-item-control {
+        width: 80%!important;
+    }
+    .ant-form .ant-select.ant-select-in-form-item {
+        width: 100%;
+    }
+    .ant-form .ant-btn {
+        width: 100%;
+        border-radius: 0;
+    }
+    .petti-login-btn-code {
+        width: 20%!important;
+    }
+}

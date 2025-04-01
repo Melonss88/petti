@@ -1,0 +1,26 @@
+.home-container {
+}
+
+// banner里面的文字效果
+.home-welcome {
+  justify-content: center;
+  font: bold 250% ftn55;
+  width: 20ch;
+  margin: 10px 0 10px;
+  white-space: nowrap;
+  //   overflow: hidden;
+  animation: typing 3s steps(40, end), cursor-blink 0.5s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
+}
