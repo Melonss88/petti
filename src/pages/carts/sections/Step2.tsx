@@ -26,7 +26,7 @@ const Step2 = () => {
     },
     {
       title: '尺码颜色',
-      render: (_, record: any) => (
+      render: (_:any, record: any) => (
         <div>
           <div>尺码：{record.size}</div>
         </div>
@@ -34,7 +34,7 @@ const Step2 = () => {
     },
     {
       title: '价格',
-      render: (_, record: any) => (
+      render: (_:any, record: any) => (
         <div className="text-red-500">¥{record.price.toFixed(2)}</div>
       ),
     },
@@ -44,7 +44,7 @@ const Step2 = () => {
     },
     {
       title: '小计',
-      render: (_, record: any) => (
+      render: (_:any, record: any) => (
         <div className="text-red-500">
           ¥{(record.price * record.quantity).toFixed(2)}
         </div>

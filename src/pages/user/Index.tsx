@@ -100,7 +100,7 @@ const Auth = () => {
               <p className="text-gray-600 mb-6">线下店铺购买时，请出示您的会员码。</p>
               <div className="text-center py-8 border border-dashed rounded-lg">
                 <div className="text-4xl font-mono tracking-widest mb-6">{userPhone}</div>
-                <Barcode value={userPhone} format="CODE128" displayValue={false} height={60} width={2} />
+                <Barcode value={String(userPhone)} format="CODE128" displayValue={false} height={60} width={2} />
               </div>
             </Card>
           )}

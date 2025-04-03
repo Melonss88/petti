@@ -101,7 +101,7 @@ const Login = () => {
                                     onClick={() => {
                                         const phone = Form.useWatch("phone");
                                         const areaCode = Form.useWatch("areaCode");
-                                        sendCode(phone, areaCode);
+                                        sendCode();
                                     }}
                                 >
                                     {sendingCode ? `${countdown}s 后重试` : "发送验证码"}

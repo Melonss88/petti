@@ -2,6 +2,7 @@ import { Table, Checkbox, InputNumber, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import useCarts from "../hooks/useCarts";
 import { useStep } from "../hooks/useStepContext";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 const Step1 = () => {
   const navigate = useNavigate();
@@ -19,14 +20,14 @@ const Step1 = () => {
     {
       title: "选择",
       dataIndex: "checked",
-      render: (_, record) => (
+      render: (_:any, record) => (
         <Checkbox checked={record.checked} onChange={() => toggleItemCheck(record.id)} />
       ),
     },
     {
       title: "商品信息",
       dataIndex: "name",
-      render: (_, record) => (
+      render: (_:any, record:any) => (
         <div className="flex gap-4 items-center">
           <img src={record.imgUrl} alt={record.name} className="w-[40px]" />
           <div>
@@ -39,7 +40,7 @@ const Step1 = () => {
     {
       title: "尺码",
       dataIndex: "size",
-      render: (_, record) => <p>尺码：{record.size}</p>,
+      render: (_:any, record: any) => <p>尺码：{record.size}</p>,
     },
     {
       title: "价格",
@@ -49,24 +50,24 @@ const Step1 = () => {
     {
       title: "数量",
       dataIndex: "quantity",
-      render: (_, record) => (
+      render: (_:any, record:any) => (
         <InputNumber min={1} value={record.quantity} onChange={(value) => updateQuantity(record.id, value!)} />
       ),
     },
     {
       title: "小计",
       dataIndex: "subtotal",
-      render: (_, record) => <span className="text-red-500">¥{(record.price * record.quantity).toFixed(2)}</span>,
+      render: (_: any, record: { price: number; quantity: number; }) => <span className="text-red-500">¥{(record.price * record.quantity).toFixed(2)}</span>,
     },
     {
       title: "操作",
       dataIndex: "action",
-      render: (_, record) => <Button onClick={() => removeItem(record.id)}>删除</Button>,
+      render: (_: any, record: { id: string; }) => <Button onClick={() => removeItem(record.id)}>删除</Button>,
     },
   ];
 
   const handleCheckout = () => {
-    const checkedItems = cartItems.filter(item => item.checked);
+    const checkedItems = cartItems.filter(item => item && item.checked);
     setSelectedItems(checkedItems);
     setWhichStep('2');
   };
