@@ -1,11 +1,8 @@
 import { Table, Checkbox, InputNumber, Button } from "antd";
-import { useNavigate } from "react-router-dom";
 import useCarts from "../hooks/useCarts";
 import { useStep } from "../hooks/useStepContext";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 const Step1 = () => {
-  const navigate = useNavigate();
   const { cartItems, updateQuantity, toggleItemCheck, removeItem, toggleAllCheck } = useCarts();
   const { setWhichStep, setSelectedItems } = useStep();
 
