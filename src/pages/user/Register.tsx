@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { Form, Input, Button, message, Select } from "antd";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import './register.scss'
 
-const Login = () => {
+const Register = () => {
     const [loading, setLoading] = useState(false);
     const [sendingCode, setSendingCode] = useState(false);
     const [countdown, setCountdown] = useState(60);
@@ -52,28 +52,27 @@ const Login = () => {
             setLoading(false);
         }
     };
-
+    
     return (
-        <div className="petti-login to-top">
-            <div className="flex justify-between w-default py-[80px]">
-                <section className="w-[48%] p-[30px] border border-solid border-[#dadada] rounded-[2px]">
-                    <h1 className="text-[30px] mb-[20px] pb-[20px] border-solid border-t-0 border-l-0 border-r-0 border-b-[1px] border-gray-300">
-                        登录
-                    </h1>
+        <div className="petti-register to-top">
+            <div className="mt-[40px] flex justify-center">
+                <div className="text-center text-[20px] w-[500px]">
+                    <h1 className="mb-[60px]">新用户注册</h1>
                     <Form name="login" onFinish={onFinish} layout="vertical">
                         <Form.Item name="areaCode" label="地区" rules={[{ required: true, message: "请选择区号!" }]}>
-                            <Select
-                                className="w-[30%]"
-                                placeholder="区号"
-                                defaultValue="+86"
-                                options={[
-                                    { label: "+86 (中国)", value: "+86" },
-                                    // { label: "+1 (美国)", value: "+1" },
-                                    // { label: "+44 (英国)", value: "+44" },
-                                    // { label: "+81 (日本)", value: "+81" },
-                                    // { label: "+49 (德国)", value: "+49" },
-                                ]}
-                            />
+                            <div className="">
+                                <Select
+                                    placeholder="区号"
+                                    defaultValue="+86"
+                                    options={[
+                                        { label: "+86 (中国)", value: "+86" },
+                                        // { label: "+1 (美国)", value: "+1" },
+                                        // { label: "+44 (英国)", value: "+44" },
+                                        // { label: "+81 (日本)", value: "+81" },
+                                        // { label: "+49 (德国)", value: "+49" },
+                                    ]}
+                                />
+                            </div>
                         </Form.Item>
 
                         <Form.Item name="phone" label="手机号" rules={[
@@ -102,28 +101,14 @@ const Login = () => {
 
                         <Form.Item>
                             <Button type="primary" htmlType="submit" loading={loading}>
-                                登录
+                                注册
                             </Button>
                         </Form.Item>
                     </Form>
-                </section>
-
-                <section className="w-[48%] h-[330px] p-[30px] border border-solid border-[#dadada] rounded-[2px]">
-                    <h1 className="text-[30px] mb-[20px] pb-[20px] border-solid border-t-0 border-l-0 border-r-0 border-b-[1px] border-gray-300">
-                        新会员注册
-                    </h1>
-                    <h2 className="text-[#1b1b1b] mt-[40px]">成为会员享受更多会员福利</h2>
-                    <div>
-                        <Link to='/register'>
-                            <button className="mt-[40px] w-[80%] h-[52px] rounded-0 text-[18px] btn-common">
-                                新会员注册
-                            </button>
-                        </Link>
-                    </div>
-                </section>
+                </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Register

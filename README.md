@@ -1,7 +1,7 @@
 # PETTI
 
 基于 React、ts、Vite、antd 搭建的hmall购物商城模版。
-但目前登录和注册的接口未做数据提交，没有写后端接口，此后会逐步更新完善。
+目前功能还在完善中...
 
 # React + TypeScript + Vite
 

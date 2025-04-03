@@ -1,14 +1,10 @@
 import Header from "@/pages/fixed/Header";
 import RootRoute from "./router";
 import Footer from "./pages/fixed/Footer";
-import mobileStore from "@/stores/mobileStore";
-import { Provider } from "mobx-react";
 import { useLocation } from "react-router-dom";
 import {FavoriteProvider} from '@/contexts/FavoriteContext'
+import { AuthProvider } from "@/contexts/AuthContext";
 
-const stores = {
-  mobileStore
-};
 function App() {
   const location = useLocation();
   if(location.pathname!='/carts') {
@@ -16,7 +12,7 @@ function App() {
   }
 
   return (
-    <Provider {...stores}>
+    <AuthProvider>
       <FavoriteProvider>
         <div>
           <Header />
@@ -24,7 +20,7 @@ function App() {
           <Footer />
         </div>
       </FavoriteProvider>
-    </Provider>
+    </AuthProvider>
   );
 }
 
