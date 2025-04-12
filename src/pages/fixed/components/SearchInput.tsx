@@ -28,7 +28,7 @@ const SearchInput = () => {
     setQuery('')
     setFilteredProducts([])
     navigate(`/detail?id=${id}`)
-    window.location.reload()
+    // window.location.reload()
     // window.location.replace(`/petti/detail?id=${id}`)
   }
 

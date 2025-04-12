@@ -1,8 +1,40 @@
 {
-  "hash": "016cb493",
+  "hash": "9040d51b",
   "configHash": "35620e97",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "72d28f07",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "f64b8086",
+  "browserHash": "86258ce3",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "09f39235",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "03e2fd8a",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "82a3567d",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "9e5d4298",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-KHSU7K2O": {
+      "file": "chunk-KHSU7K2O.js"
+    },
+    "chunk-RGWPGAAI": {
+      "file": "chunk-RGWPGAAI.js"
+    }
+  }
 }
