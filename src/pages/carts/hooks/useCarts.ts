@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import productInfos from "@/pages/hmall/config/products";
+import productInfos from "@/config/products";
 
 const CART_KEY = "cartItems";
 

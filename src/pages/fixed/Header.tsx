@@ -5,15 +5,12 @@ import { useEffect, useState } from "react";
 import { observer } from "mobx-react";
 import List from '@/pages/home/section/List'
 import { useAuth } from "@/contexts/AuthContext";
+import SearchCoin from './components/SearchCoin'
 
 const Header = () => {
   const [showList, setShowList] = useState(false);
   const [openList, setOpenList] = useState(false)
   const { user, isLoggedIn, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-  };
 
   return (
     <section className="header-container text-[2.4rem] fixed top-0 left-0 right-0 z-[2000] text-black bg-[#fff]">
@@ -29,13 +26,8 @@ const Header = () => {
               </svg>
               目录
             </li>
-            <li className="flex items-center cursor-pointer">
-              <svg 
-                className="mr-[10px] ml-[32px]" 
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0"/>
-              </svg>
-              搜索
+            <li>
+              <SearchCoin />
             </li>
           </ul>
 

@@ -1,5 +1,5 @@
 import ProductCard from '../hmall/section/productCard'
-import productInfos,{ productType } from '../hmall/config/products'
+import productInfos,{ productType } from '../../config/products'
 import { useFavorite } from '@/contexts/FavoriteContext'
 import { Link } from 'react-router-dom'
 import { useAuth } from '@/contexts/AuthContext'

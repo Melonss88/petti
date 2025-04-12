@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ProductCard from './section/productCard';
-import productInfos, { productType, CATEGORIES } from './config/products';
+import productInfos, { productType, CATEGORIES } from '../../config/products';
 import { Button } from 'antd';
 
 const HmallProducts = () => {
@@ -15,19 +15,22 @@ const HmallProducts = () => {
         <div className="hmall-products to-top w-default">
             {/* 添加筛选栏 */}
             <div className="category-filter my-[30px] text-[14px] flex flex-wrap gap-2">
-                {Object.entries(CATEGORIES).map(([key, value]) => (
+                {Object.entries(CATEGORIES).map(([key, value]) => {
+                    const typeNumber = parseInt(key.split('_')[1]) 
+                    return (
                     <Button
                         key={key}
                         className={`px-[12px] py-[4px] rounded-full ${
-                            activeCategory === Number(key) 
-                                ? 'bg-black text-white' 
-                                : 'bg-gray-100 text-black'
+                        activeCategory === typeNumber
+                            ? 'bg-black text-white'
+                            : 'bg-gray-100 text-black'
                         }`}
-                        onClick={() => setActiveCategory(Number(key))}
+                        onClick={() => setActiveCategory(typeNumber)}
                     >
                         {value}
                     </Button>
-                ))}
+                    )
+                })}
             </div>
             
             {/* 产品列表 */}

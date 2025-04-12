@@ -1,5 +1,5 @@
 import { Drawer, Button } from "antd";
-import productInfos from "@/pages/hmall/config/products";
+import productInfos from "@/config/products";
 import { Link } from "react-router-dom";
 
 const AddCart = ({

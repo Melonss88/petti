@@ -1,6 +1,6 @@
 import { Drawer } from "antd";
 import { Link } from "react-router-dom";
-import { CATEGORIES } from "@/pages/hmall/config/products";
+import { CATEGORIES } from "@/config/products";
 
 interface ListProps {
     isOpen: boolean;

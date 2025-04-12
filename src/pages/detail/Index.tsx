@@ -1,11 +1,12 @@
 import './index.scss'
 import { useSearchParams } from "react-router-dom"
-import productInfos, {productType} from "../hmall/config/products";
+import productInfos, {productType} from "../../config/products";
 import { Select } from "antd";
 import { useState } from "react";
 import Favorite from '../components/Favorite';
 import AddCart from './section/AddCart'
 import useCarts from '../carts/hooks/useCarts';
+import { typeFormat } from '@/utils/typeFormat';
 
 const ProductDetail = () => {
     const [searchParams] = useSearchParams()
@@ -44,7 +45,9 @@ const ProductDetail = () => {
                             <span>{currentItem.title} {currentItem.id}</span> 
                             <Favorite id={currentItem.id}/>
                         </p>
-                        <p className="text-[13px] text-[#767676]">{currentItem.type}</p>
+                        <p className="text-[13px] text-[#767676]">
+                            {typeFormat(currentItem.type)}
+                        </p>
                         <div className="mt-[40px] w-full flex items-center">
                             <span className="text-[15px]">尺寸：</span>
                             <Select

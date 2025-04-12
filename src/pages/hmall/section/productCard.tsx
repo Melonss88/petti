@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import {productType} from '../config/products'
+import {productType} from '../../../config/products'
 import { useFavorite } from '@/contexts/FavoriteContext';
 import { useMatch } from 'react-router-dom';
+import { typeFormat } from '@/utils/typeFormat';
 
 const productCard = ({id,imgUrl,type,title,price}:productType) => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const productCard = ({id,imgUrl,type,title,price}:productType) => {
             >
             <img className='w-full h-[380px]' src={imgUrl} alt="product.jpg" />
             <div className='text-[13px]'>
-                <p className='text-[#767676] mt-[5px]'>{type}</p>
+                <p className='text-[#767676] text-lg mt-[5px] mb-[5px]'>{typeFormat(type)}</p>
                 <p className=''>{id}</p>
                 <p className='mt-[3px] text-[14px]'>{title}</p>
                 <p className='mt-[3px]'>{price}</p>
